@@ -1,11 +1,14 @@
 var gDebugMode = true;
 var bg;
+var paper;
 
 // Setup code goes here
 function setup() {
   createCanvas(1000, 1000);
 
   bg = loadImage("assets/bg.png");
+  //paper = loadImage("assets/paper.jpg");
+
 
   textSize(20);
   textAlign(LEFT);
@@ -22,12 +25,14 @@ function draw() {
   if (gDebugMode == true){
   	drawDebugInfo();
   }
+
   drawBackHair();
   drawEar();
   drawHead();
   drawBangs();
   drawFace();
   drawClothes();
+  //image(paper, 0, 0);
  }
 
 // draws a bunch of facial features

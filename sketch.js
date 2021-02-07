@@ -1,9 +1,11 @@
 var gDebugMode = true;
-var leftEar;
+var bg;
 
 // Setup code goes here
 function setup() {
   createCanvas(1000, 1000);
+
+  bg = loadImage("assets/bg.png");
 
   textSize(20);
   textAlign(LEFT);
@@ -13,7 +15,9 @@ function setup() {
 
 // Draw code goes here
 function draw() {
-  background("#ae58e8");
+  background(55);
+  image(bg, 0, 0);
+
 
     if (gDebugMode == true){
   	drawDebugInfo();

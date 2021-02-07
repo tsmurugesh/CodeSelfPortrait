@@ -37,6 +37,10 @@ function drawFace(){
 	arc(615,510, 160,80, 3.4,5.2);
 	
 	noStroke();
+
+	fill("#ea56b1");
+	ellipse(500, 630, 70, 80);
+	
 	fill(0);
 	translate(-50,-50);
 	scale(1.1);
@@ -85,6 +89,15 @@ function drawFace(){
 	endShape(CLOSE);
 
 
+
+	fill("cyan");
+	ellipse(360,550,25,25);
+	ellipse(380,570,15,15);
+
+	ellipse(580,550,25,25);
+	ellipse(600,570,15,15);
+
+
 }
 
 function drawHead(){
@@ -95,13 +108,13 @@ function drawHead(){
 	vertex(440, 786);
 	vertex(360, 740);
 	vertex(300,686);
-	vertex(230,580);
+	vertex(230,550);
 	vertex(220,600); //left//
 	vertex(293,308);
 	vertex(500,200); //top//
 	vertex(680,308);
 	vertex(780,600); //right//
-	vertex(770,580);
+	vertex(770,550);
 	vertex(700,686)
 	vertex(630, 745);
 

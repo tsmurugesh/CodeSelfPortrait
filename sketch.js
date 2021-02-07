@@ -6,7 +6,7 @@ var paper;
 function setup() {
   createCanvas(1000, 1000);
 
-  bg = loadImage("assets/bg.png");
+  //bg = loadImage("assets/bg.png");
   //paper = loadImage("assets/paper.jpg");
 
 
@@ -19,19 +19,18 @@ function setup() {
 // Draw code goes here
 function draw() {
   background(55);
-  image(bg, 0, 0);
-
-
-  if (gDebugMode == true){
-  	drawDebugInfo();
-  }
+  //image(bg, 0, 0);
 
   drawBackHair();
   drawEar();
   drawHead();
   drawBangs();
   drawFace();
+  drawAccs();
   drawClothes();
+  if (gDebugMode == true){
+  	drawDebugInfo();
+  }
   //image(paper, 0, 0);
  }
 
@@ -43,6 +42,11 @@ function drawFace(){
 	strokeWeight(10);
 	noFill();
 	arc(500,680, 180,80, 0.1,3);
+
+	// ear lines
+	arc(210,540, 80,140, HALF_PI+QUARTER_PI,PI+HALF_PI+QUARTER_PI);
+	arc(790,540, 80,140, PI+QUARTER_PI,QUARTER_PI);
+
 
 	// eyebrows
 	stroke(0);
@@ -62,8 +66,8 @@ function drawFace(){
 	noFill();
 	//fill("#a0e81b66")
 	strokeWeight(10);
-	rect(370, 570, 170, 150, 20,20,40,40);
-	rect(630, 570, 170, 150, 20,20,40,40);
+	rect(370, 570, 170, 160, 40,40,70,70);
+	rect(630, 570, 170, 160, 40,40,70,70);
 	line(455,540,545,540);
 
 	
@@ -75,6 +79,7 @@ function drawFace(){
 
 
 	fill(0);
+	push();
 	translate(-50,-50);
 	scale(1.1);
 
@@ -162,6 +167,7 @@ function drawFace(){
   	rotate(frameCount / -100.0);
   	star(0, 0, 5, 12, 7);
   	pop();
+  	pop();
 
 }
 
@@ -170,9 +176,9 @@ function drawHead(){
 	noStroke();
 	fill("#f477d1");
 	beginShape();
-	vertex(500,800); //bottom, clockwise//
+	vertex(500,795); //bottom, clockwise//
 	vertex(440, 786);
-	vertex(360, 740);
+	vertex(360, 750);
 	vertex(300,686);
 	vertex(230,550);
 	vertex(220,600); //left//
@@ -182,7 +188,7 @@ function drawHead(){
 	vertex(780,600); //right//
 	vertex(770,550);
 	vertex(700,686)
-	vertex(630, 745);
+	vertex(630, 750);
 	vertex(560, 786);
 	endShape();
 }
@@ -197,24 +203,42 @@ function drawEar(){
 
 	// neck
 	fill("#d84ba0");
-	rect(500, 740, 150, 180);
+	rect(500, 740, 150, 200);
+
+	// body
+	beginShape();
+	vertex(130,1000);
+	vertex(200,910);
+	vertex(280,866);
+	vertex(350,850);
+	vertex(420,840);
+	vertex(580,840);
+	vertex(660,850);
+	vertex(720,866);
+	vertex(800,910);
+	vertex(870,1000);
+	endShape(CLOSE);
+
 }
 
 // draws bangs
 function drawBangs(){
 	noStroke();
 
+	fill("#7f1c93")
+	rect(500,330,100,40);
 	// left side bangs
 	fill("#f2299e");
 	beginShape();
 	vertex(500,180);
-	vertex(500,320);
+	vertex(500,350)
+	vertex(470,320);
 	vertex(440,390);
 	vertex(430,460);
 	//vertex(390,330);//
 	vertex(380,400); //up point
 	vertex(340,480);
-	vertex(300,480);
+	vertex(300,460);
 	vertex(280,530);
 	vertex(250,470);
 	vertex(210,450);
@@ -228,13 +252,14 @@ function drawBangs(){
 	fill("#853cc1");
 	beginShape();
 	vertex(500,180);
-	vertex(500,320);
+	vertex(500,350);
+	vertex(530,320);
 	vertex(560,390);
 	vertex(570,460);
 	//vertex(390,330);//
 	vertex(620,400); //up point
 	vertex(660,480);
-	vertex(700,480);
+	vertex(700,460);
 	vertex(720,530);
 	vertex(750,470);
 	vertex(790,450);
@@ -293,28 +318,111 @@ function drawBackHair(){
 
 // draws clothing
 function drawClothes(){
-
+	scale(1);
 	// turtleneck 
 	fill("#ffc907");
-    rect(500, 870, 190, 180);
+    //rect(500, 870, 190, 180);
 
     // sweater
-	fill(0);
-	//arc(500,1040,800,487,PI, TWO_PI);
+	// fill(0);
+	// beginShape();
+	// vertex(130,1000);
+	// vertex(200,910);
+	// vertex(280,866);
+	// vertex(350,850);
+	// vertex(420,840);
+	// vertex(580,840);
+	// vertex(660,850);
+	// vertex(720,866);
+	// vertex(800,910);
+	// vertex(870,1000);
+	// beginContour();
+	// vertex(420,840);
+	// vertex(340,850);
+	// vertex(360,1000);
+	// vertex(640,1000);
+	// vertex(660,850);
+	// vertex(580,840);
+	// endContour(CLOSE);
+	// endShape(CLOSE);
+
+    }
+
+ function drawAccs(){
+	fill(255);
+	if (keyCode === UP_ARROW){
+		//ellipse(100,100,100,100);
+		outfitOne();
+	}
+	else if (keyCode === DOWN_ARROW){
+		outfitTwo();
+	}
+}
+
+function outfitOne(){
+	// turtleneck 
+	fill("white");
+    rect(500, 880, 190, 150);
+
+	// sweater
+	fill("#f442a1");
 	beginShape();
-	vertex(80,1000);
-	vertex(200,880);
-	vertex(300,800);
-	vertex(700,800);
-	vertex(920,1000);
+	vertex(130,1000);
+	vertex(200,910);
+	vertex(280,866);
+	vertex(350,850);
+	vertex(420,840);
+	vertex(580,840);
+	vertex(660,850);
+	vertex(720,866);
+	vertex(800,910);
+	vertex(870,1000);
 	beginContour();
-	vertex(400,800);
+	vertex(400,840);
 	vertex(500,950);
-	vertex(600,800);
+	vertex(600,840);
 	endContour(CLOSE);
 	endShape(CLOSE);
 
-    }
+}
+
+function outfitTwo(){
+	//shirt
+	stroke("red");
+	strokeWeight(10);
+	noFill();
+	line(340,910,660,910);
+	noStroke()
+	fill("white");
+	rect(500,960, 330,100);
+
+	// jacket
+	fill("green");
+	beginShape();
+	vertex(130,1000);
+	vertex(200,910);
+	vertex(280,866);
+	vertex(350,850);
+	vertex(420,840);
+	vertex(580,840);
+	vertex(660,850);
+	vertex(720,866);
+	vertex(800,910);
+	vertex(870,1000);
+	beginContour();
+	vertex(420,840);
+	vertex(340,850);
+	vertex(360,1000);
+	vertex(640,1000);
+	vertex(660,850);
+	vertex(580,840);
+	endContour(CLOSE);
+	endShape(CLOSE);
+
+	//earrings
+
+}
+
 
 function star(x, y, radius1, radius2, npoints) {
   let angle = TWO_PI / npoints;

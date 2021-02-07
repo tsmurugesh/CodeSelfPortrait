@@ -40,7 +40,7 @@ function drawFace(){
 	stroke("#d84ba0");
 	strokeWeight(10);
 	noFill();
-	arc(500,680, 180,80, 0.1,3);
+	arc(500,670, 180,80, 0.1,3);
 
 	// ear lines
 	arc(210,540, 80,140, HALF_PI+QUARTER_PI,PI+HALF_PI+QUARTER_PI);
@@ -66,7 +66,7 @@ function drawFace(){
 
 	//nose
 	fill("#d84ba0");
-	ellipse(500, 650, 60, 40);
+	ellipse(500, 630, 60, 70);
 
 
 	fill(0);
@@ -119,18 +119,14 @@ function drawFace(){
 	endShape(CLOSE);
 
 	//eye shine
-
-	fill("#d1fffd");
-	//ellipse(360,550,25,25);
-	//ellipse(380,570,15,15);
-
-	//ellipse(580,550,25,25);
-	//ellipse(600,570,15,15);
 	noFill();
 	strokeWeight(2);
-	stroke("#d1fffd");
+	stroke("#e923ff");
 	ellipse(610,577,45,15);
 	ellipse(390,577,45,15);
+	stroke("#72faff");
+	ellipse(407,555,7,7);
+	ellipse(630,550,7,7);
 
 
 	fill("#d1fffd");
@@ -166,31 +162,32 @@ function drawFace(){
 function drawHead(){
 	noStroke();
 	fill("#f477d1");
+
+	ellipse(220, 545, 140,190);
+	ellipse(780, 545, 150,190);
+
 	beginShape();
 	vertex(500,795); //bottom, clockwise//
 	vertex(440, 786);
 	vertex(360, 750);
 	vertex(300,686);
-	vertex(230,550);
-	vertex(220,600); //left//
+	vertex(240,550);
+	//vertex(220,600); //left//
 	vertex(293,308);
 	vertex(500,200); //top//
 	vertex(680,308);
-	vertex(780,600); //right//
+	//vertex(780,600); //right//
 	vertex(770,550);
 	vertex(700,686)
 	vertex(630, 750);
 	vertex(560, 786);
-	endShape();
+	endShape(CLOSE);
+
 }
 
 //draws ears and neck shapes
 function drawEar(){
-	// ear
 	noStroke();
-	fill("#f477d1");
-	ellipse(220, 545, 140,190);
-	ellipse(780, 545, 150,190);
 
 	// neck
 	fill("#d84ba0");
@@ -216,12 +213,16 @@ function drawEar(){
 function drawBangs(){
 	noStroke();
 
-	fill("#7f1c93")
+	fill("#7f1c93");
 	rect(500,330,100,40);
 	// left side bangs
 	fill("#f2299e");
 	beginShape();
 	vertex(500,180);
+	vertex(530,200);
+	vertex(470,240);
+	vertex(530,280);
+	vertex(500,300);
 	vertex(500,350)
 	vertex(470,320);
 	vertex(440,390);
@@ -243,6 +244,10 @@ function drawBangs(){
 	fill("#853cc1");
 	beginShape();
 	vertex(500,180);
+	vertex(530,200);
+	vertex(470,240);
+	vertex(530,280);
+	vertex(500,300);
 	vertex(500,350);
 	vertex(530,320);
 	vertex(560,390);
@@ -260,10 +265,39 @@ function drawBangs(){
 	vertex(550,170);
 	endShape(CLOSE);
 
-	// stroke("#d1fffd");
-	// strokeWeight(10);
-	// noFill();
-	// arc(490,230, 380,100, 0.1,3);
+	stroke("#d1fffd");
+	strokeWeight(2);
+	noFill();
+
+	push();
+ 	translate(width /3.2, height /3.1);
+  	star(0, 0, 17, 28, 4);
+  	pop();
+
+  	push();
+ 	translate(width /1.4, height /2.8);
+  	star(0, 0, 11, 18, 4);
+  	pop();
+
+  	push();
+ 	translate(width /1.5, height /3.4);
+  	star(0, 0, 20, 32, 5);
+  	pop();
+
+  	push();
+ 	translate(width /2.5, height /2.9);
+  	star(0, 0, 6, 11, 7);
+  	pop();
+
+  	push();
+ 	translate(width /1.7, height /3);
+  	star(0, 0, 6, 11, 7);
+  	pop();
+
+  	push();
+ 	translate(width /2.6, height /3.6);
+  	star(0, 0, 9, 18, 6);
+  	pop();
 }
 
 // draws the back of the hair
@@ -445,9 +479,9 @@ function outfitTwo(){
 	noFill();
 	//fill("#a0e81b66")
 	strokeWeight(10);
-	rect(370, 570, 170, 160, 40,40,70,70);
-	rect(630, 570, 170, 160, 40,40,70,70);
-	line(455,540,545,540);
+	rect(370, 575, 170, 160, 40,40,70,70);
+	rect(630, 575, 170, 160, 40,40,70,70);
+	arc(500,545,90,50,PI,TWO_PI);
 	pop();
 
 
@@ -499,6 +533,7 @@ function outfitThree(){
 	point(645,636);
 	point(684,638);
 
+	//earrings
 	stroke("#ffd026");
 	fill("#ffd026")
 	line(225,317,265,350);
@@ -506,11 +541,22 @@ function outfitThree(){
 	ellipse(220,620,20,20);
 	ellipse(220,650,5,5);
 	ellipse(220,670,5,5);
-	ellipse(220,695,10,10);
+	ellipse(220,700,25,25);
 	ellipse(780,620,20,20);
 	ellipse(780,650,5,5);
 	ellipse(780,670,5,5);
-	ellipse(780,695,10,10);
+	ellipse(780,700,25,25);
+
+	noStroke();
+	strokeWeight(2);
+	fill("#e923ff");
+	ellipse(220,700,20,20);
+	ellipse(780,700,20,20);
+
+	stroke("#d1fffd");
+	strokeWeight(8);
+	point(214,695);
+	point(773,695);
 	pop();
 
 }
@@ -558,9 +604,9 @@ function outfitFour(){
 	noFill();
 	//fill("#a0e81b66")
 	strokeWeight(10);
-	rect(370, 570, 170, 160, 40,40,70,70);
-	rect(630, 570, 170, 160, 40,40,70,70);
-	line(455,540,545,540);
+	rect(370, 575, 170, 160, 40,40,70,70);
+	rect(630, 575, 170, 160, 40,40,70,70);
+	arc(500,545,90,50,PI,TWO_PI);
 	pop();
 
 

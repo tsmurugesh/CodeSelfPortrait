@@ -357,6 +357,9 @@ function drawClothes(){
 	else if (keyCode === DOWN_ARROW){
 		outfitTwo();
 	}
+	else if (keyCode === LEFT_ARROW){
+		outfitThree();
+	}
 }
 
 function outfitOne(){
@@ -389,7 +392,7 @@ function outfitOne(){
 function outfitTwo(){
 	//shirt
 	stroke("red");
-	strokeWeight(10);
+	strokeWeight(30);
 	noFill();
 	line(340,910,660,910);
 	noStroke()
@@ -420,6 +423,58 @@ function outfitTwo(){
 	endShape(CLOSE);
 
 	//earrings
+	noFill();
+	stroke("green");
+	strokeWeight(5);
+	line(220,620, 200,700);
+	line(220,620, 250,720);
+	line(780,620, 730,710);
+	line(780,620, 780,700);
+
+	noStroke();
+	fill("red");
+	ellipse(200,700,40,40);
+	ellipse(250,720,40,40);
+	ellipse(730,710,40,40);
+	ellipse(780,700,40,40);
+
+
+}
+
+function outfitThree(){
+	push();
+	fill("#c7a9f2");
+	beginShape();
+	vertex(130,1000);
+	vertex(200,910);
+	vertex(280,866);
+	vertex(350,850);
+	vertex(420,840);
+	vertex(420,805);
+	vertex(580,805);
+	vertex(580,840);
+	vertex(660,850);
+	vertex(720,866);
+	vertex(800,910);
+	vertex(870,1000);
+	endShape(CLOSE);
+
+	fill(255);
+	beginShape();
+	vertex(275,1000);
+	vertex(280,920);
+	vertex(500,980);
+	vertex(720,920);
+	vertex(725,1000);
+	endShape(CLOSE);
+
+
+	noFill();
+	stroke(255);
+	strokeWeight(17);
+	line(300,860,275,1000);
+	line(700,860,725,1000);
+	pop();
 
 }
 

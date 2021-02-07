@@ -7,12 +7,13 @@ function setup() {
 
   textSize(20);
   textAlign(LEFT);
+  rectMode(CENTER);
  }
 
 
 // Draw code goes here
 function draw() {
-  background("blue");
+  background("#ae58e8");
 
     if (gDebugMode == true){
   	drawDebugInfo();
@@ -27,19 +28,35 @@ function draw() {
 
 function drawFace(){
 
-	stroke(0);
+	stroke("#d84ba0");
 	strokeWeight(10);
 	noFill();
-	arc(500,660, 180,80, 0,PI);
+	arc(500,680, 180,80, 0.1,3);
 
+	stroke(0);
 	strokeWeight(17);
 	arc(385,510, 160,80, 4.2,6);
 	arc(615,510, 160,80, 3.4,5.2);
+
+	fill("#f458a6");
+	noStroke();
+	ellipse(350, 650, 100, 100);
+	ellipse(650, 650, 100, 100);
+
+	stroke("#a0e81b");
+	noFill();
+	strokeWeight(10);
+	rect(370, 570, 170, 150, 20,20,40,40);
+	rect(630, 570, 170, 150, 20,20,40,40);
+	line(455,540,545,540);
+
 	
 	noStroke();
 
-	fill("#ea56b1");
-	ellipse(500, 630, 70, 80);
+	fill("#d84ba0");
+	ellipse(500, 650, 60, 40);
+
+
 	
 	fill(0);
 	translate(-50,-50);
@@ -90,7 +107,7 @@ function drawFace(){
 
 
 
-	fill("cyan");
+	fill("#baf704");
 	ellipse(360,550,25,25);
 	ellipse(380,570,15,15);
 
@@ -126,11 +143,11 @@ function drawHead(){
 function drawEar(){
 	noStroke();
 	fill("#f477d1");
-	ellipse(200, 540, 170,190);
-	ellipse(800, 540, 170,190);
+	ellipse(220, 545, 140,190);
+	ellipse(780, 545, 150,190);
 
-	fill("#ea56b1");
-	rect(425, 740, 150, 180);
+	fill("#d84ba0");
+	rect(500, 740, 150, 180);
 }
 
 function drawBangs(){
@@ -216,10 +233,10 @@ function drawBackHair(){
 
 function drawClothes(){
 
-	fill("cyan");
-    rect(405, 778, 190, 180);
+	fill("#baf704");
+    rect(500, 870, 190, 180);
 
-	fill(39);
+	fill(0);
 	//arc(500,1040,800,487,PI, TWO_PI);
 	beginShape();
 	vertex(80,1000);

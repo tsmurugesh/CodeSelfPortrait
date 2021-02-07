@@ -6,7 +6,7 @@ var paper;
 function setup() {
   createCanvas(1000, 1000);
 
-  //bg = loadImage("assets/bg.png");
+  bg = loadImage("assets/bg2.png");
   //paper = loadImage("assets/paper.jpg");
   textSize(20);
   text(255);
@@ -18,7 +18,7 @@ function setup() {
 // Draw code goes here
 function draw() {
   background(55);
-  //image(bg, 0, 0);
+  image(bg, 0, 0);
 
   drawBackHair();
   drawEar();
@@ -66,7 +66,7 @@ function drawFace(){
 
 	//nose
 	fill("#d84ba0");
-	ellipse(500, 630, 60, 70);
+	ellipse(500, 630, 60, 40);
 
 
 	fill(0);

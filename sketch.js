@@ -1,15 +1,14 @@
-var gDebugMode = true;
+var gDebugMode = false;
 var bg;
 var paper;
 
 // Setup code goes here
 function setup() {
   createCanvas(1000, 1000);
-
-  bg = loadImage("assets/bg2.png");
-
   textSize(40);
   text(255);
+  textFont('Courier New'); 
+
   textAlign(CENTER);
   rectMode(CENTER);
  }
@@ -17,9 +16,8 @@ function setup() {
 
 // Draw code goes here
 function draw() {
-  background(55);
-  image(bg, 0, 0);
-
+  background("blue");
+  
   drawBackHair();
   drawBody();
   drawHead();
@@ -407,7 +405,39 @@ function outfitOne(){
 	vertex(200,190);
 	vertex(200,220);
 	endShape();
-}
+
+	// earrings
+	fill("#f442a1");
+	beginShape();
+	vertex(220,710);
+	vertex(190,680);
+	vertex(200,665);
+	vertex(210,665);
+	vertex(220,675);
+	vertex(230,665);
+	vertex(240,665);
+	vertex(250,680);
+	endShape(CLOSE);
+
+	beginShape();
+	vertex(780,750);
+	vertex(750,720);
+	vertex(760,705);
+	vertex(770,705);
+	vertex(780,715);
+	vertex(790,705);
+	vertex(800,705);
+	vertex(810,720);
+	endShape(CLOSE);
+
+	fill("#ffd026")
+	ellipse(220,620,20,20);
+	ellipse(220,650,20,20);
+	ellipse(780,620,20,20);
+	ellipse(780,650,20,20);
+	ellipse(780,680,20,20);
+
+	}
 
 // green jacket cherry earrings outfit
 function outfitTwo(){
@@ -532,7 +562,6 @@ function outfitThree(){
 	ellipse(780,670,5,5);
 	ellipse(780,700,25,25);
 
-	noStroke();
 	strokeWeight(2);
 	fill("#e923ff");
 	ellipse(220,700,20,20);
@@ -592,6 +621,32 @@ function outfitFour(){
 	rect(370, 575, 170, 160, 40,40,70,70);
 	rect(630, 575, 170, 160, 40,40,70,70);
 	arc(500,545,90,50,PI,TWO_PI);
+
+	// clips
+	stroke("blue");
+	strokeWeight(13);
+	beginShape();
+	vertex(750,410);
+	vertex(760,390);
+	vertex(780,400);
+	vertex(790, 380);
+	vertex(810,390);
+	endShape();
+	point(500,980);
+	stroke("yellow");
+	beginShape();
+	vertex(760,440);
+	vertex(770,420);
+	vertex(790,430);
+	vertex(800, 410);
+	vertex(820,420);
+	endShape();
+	point(500,960);
+
+	stroke("red");
+	point(500,940);
+
+
 	pop();
 
 
@@ -616,11 +671,11 @@ function star(x, y, radius1, radius2, npoints) {
 // shows x and y value at mouse point, toggles off and on by space bar
 function drawDebugInfo(){
 	fill(255);
-	text("x: "+ mouseX + " y: " + mouseY, 50, height-2);
+	text("x: "+ mouseX + " y: " + mouseY, 100, height-2);
 }
 
-function keyTyped(){
-	if (key === " "){
-		gDebugMode = !gDebugMode;
-	}
-}
+// function keyTyped(){
+// 	if (key === " "){
+// 		gDebugMode = !gDebugMode;
+// 	}
+// }

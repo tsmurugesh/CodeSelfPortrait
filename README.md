@@ -6,5 +6,5 @@ Started Feb 6th 2021
 This is a self portrait made in p5 made out of various shapes and lines. 
 
 ###Technical Details
-I modified the draw and added my own functions. 
+I modified the draw and added my own functions. No extra assests used.
 

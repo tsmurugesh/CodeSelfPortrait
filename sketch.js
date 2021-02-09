@@ -7,8 +7,8 @@ function setup() {
   createCanvas(1000, 1000);
 
   bg = loadImage("assets/bg2.png");
-  //paper = loadImage("assets/paper.jpg");
-  textSize(20);
+
+  textSize(40);
   text(255);
   textAlign(CENTER);
   rectMode(CENTER);
@@ -21,16 +21,15 @@ function draw() {
   image(bg, 0, 0);
 
   drawBackHair();
-  drawEar();
+  drawBody();
   drawHead();
   drawBangs();
   drawFace();
   drawAccs();
-  //drawClothes();
+
   if (gDebugMode == true){
   	drawDebugInfo();
   }
-  //image(paper, 0, 0);
  }
 
 // draws a bunch of facial features
@@ -53,6 +52,7 @@ function drawFace(){
 	arc(385,510, 160,80, 4.2,6);
 	arc(615,510, 160,80, 3.4,5.2);
 
+	// moles
 	strokeWeight(5);
 	point(308,615);
 	point(388,709);
@@ -63,11 +63,9 @@ function drawFace(){
 	ellipse(350, 650, 100, 100);
 	ellipse(650, 650, 100, 100);
 
-
 	//nose
 	fill("#d84ba0");
 	ellipse(500, 630, 60, 40);
-
 
 	fill(0);
 	push();
@@ -128,7 +126,6 @@ function drawFace(){
 	ellipse(407,555,7,7);
 	ellipse(630,550,7,7);
 
-
 	fill("#d1fffd");
 	noStroke();
 	push();
@@ -185,8 +182,8 @@ function drawHead(){
 
 }
 
-//draws ears and neck shapes
-function drawEar(){
+// draws body structure
+function drawBody(){
 	noStroke();
 
 	// neck
@@ -212,9 +209,9 @@ function drawEar(){
 // draws bangs
 function drawBangs(){
 	noStroke();
-
 	fill("#7f1c93");
 	rect(500,330,100,40);
+
 	// left side bangs
 	fill("#f2299e");
 	beginShape();
@@ -227,8 +224,7 @@ function drawBangs(){
 	vertex(470,320);
 	vertex(440,390);
 	vertex(430,460);
-	//vertex(390,330);//
-	vertex(380,400); //up point
+	vertex(380,400); 
 	vertex(340,480);
 	vertex(300,460);
 	vertex(280,530);
@@ -252,8 +248,7 @@ function drawBangs(){
 	vertex(530,320);
 	vertex(560,390);
 	vertex(570,460);
-	//vertex(390,330);//
-	vertex(620,400); //up point
+	vertex(620,400); 
 	vertex(660,480);
 	vertex(700,460);
 	vertex(720,530);
@@ -265,6 +260,7 @@ function drawBangs(){
 	vertex(550,170);
 	endShape(CLOSE);
 
+	// hair stars
 	stroke("#d1fffd");
 	strokeWeight(2);
 	noFill();
@@ -341,10 +337,10 @@ function drawBackHair(){
 	endShape(CLOSE);
 }
 
+// loops to choose what outfit to draw upon arrow key press
  function drawAccs(){
 	fill(255);
 	if (keyCode === UP_ARROW){
-		//ellipse(100,100,100,100);
 		outfitOne();
 	}
 	else if (keyCode === DOWN_ARROW){
@@ -357,16 +353,16 @@ function drawBackHair(){
 		outfitFour();
 	}
 	else{
-		text("choose an outfit with the arrow keys!", 500,50);
+		text("choose an outfit with the arrow keys!", 500,75);
 	}
 
 }
 
+// pink sweater with turtleneck outfit
 function outfitOne(){
 	// turtleneck 
 	fill("#d1fffd");
     rect(500, 880, 190, 150);
-
     stroke(0);
     strokeWeight(4);
     line(400,820,600,820);
@@ -375,7 +371,6 @@ function outfitOne(){
     line(400,880,600,880);
     line(400,900,600,900);
     line(400,920,600,920);
-
 
     noStroke();
 	// sweater
@@ -392,13 +387,9 @@ function outfitOne(){
 	vertex(720,866);
 	vertex(800,910);
 	vertex(870,1000);
-	// beginContour();
-	// vertex(400,850);
-	// vertex(500,950);
-	// vertex(600,850);
-	// endContour(CLOSE);
 	endShape(CLOSE);
 
+	// beret
     fill("#f477d1");
 	beginShape();
 	vertex(217,260);
@@ -415,14 +406,10 @@ function outfitOne(){
 	vertex(340,60);
 	vertex(200,190);
 	vertex(200,220);
-
-
-
 	endShape();
-
-
 }
 
+// green jacket cherry earrings outfit
 function outfitTwo(){
 	push();
 	//shirt
@@ -475,21 +462,18 @@ function outfitTwo(){
 
 	//glasses
 	stroke("#d1fffd");
-	//noStroke();
 	noFill();
-	//fill("#a0e81b66")
 	strokeWeight(10);
 	rect(370, 575, 170, 160, 40,40,70,70);
 	rect(630, 575, 170, 160, 40,40,70,70);
 	arc(500,545,90,50,PI,TWO_PI);
 	pop();
-
-
 }
 
+// purple and white outfit 
 function outfitThree(){
-	// purple and white outfit 
 	push();
+	// shirt
 	fill("#c7a9f2");
 	beginShape();
 	vertex(130,1000);
@@ -506,6 +490,7 @@ function outfitThree(){
 	vertex(870,1000);
 	endShape(CLOSE);
 
+	//dress
 	fill("#d1fffd");
 	beginShape();
 	vertex(275,1000);
@@ -515,13 +500,13 @@ function outfitThree(){
 	vertex(725,1000);
 	endShape(CLOSE);
 
-
 	noFill();
 	stroke("#d1fffd");
 	strokeWeight(17);
 	line(300,860,275,1000);
 	line(700,860,725,1000);
 
+	//face glitter
 	strokeWeight(5);
 	point(370,630);
 	point(345,649);
@@ -561,8 +546,10 @@ function outfitThree(){
 
 }
 
+// white and black shirt outfit
 function outfitFour(){
 	push();
+	// black turtleneck
 	fill(0);
 	beginShape();
 	vertex(130,1000);
@@ -579,6 +566,7 @@ function outfitFour(){
 	vertex(870,1000);
 	endShape(CLOSE);
 
+	// white button up
 	fill("#c5e7ea");
 	beginShape();
 	vertex(250,1000);
@@ -593,16 +581,13 @@ function outfitFour(){
 	vertex(800,910);
 	vertex(750,1000);
 	endShape(CLOSE);
-
 	fill("#d1fffd");
 	triangle(420,840,500,920,420,950);
 	triangle(500,920,580,840,580,950);
 
 	//glasses
 	stroke("#d1fffd");
-	//noStroke();
 	noFill();
-	//fill("#a0e81b66")
 	strokeWeight(10);
 	rect(370, 575, 170, 160, 40,40,70,70);
 	rect(630, 575, 170, 160, 40,40,70,70);
@@ -612,7 +597,7 @@ function outfitFour(){
 
 }
 
-
+// function for spinning stars, from the p5 refrence library
 function star(x, y, radius1, radius2, npoints) {
   let angle = TWO_PI / npoints;
   let halfAngle = angle / 2.0;
@@ -627,6 +612,7 @@ function star(x, y, radius1, radius2, npoints) {
   }
   endShape(CLOSE);
 }
+
 // shows x and y value at mouse point, toggles off and on by space bar
 function drawDebugInfo(){
 	fill(255);
